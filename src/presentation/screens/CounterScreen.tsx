@@ -2,6 +2,7 @@
 import { useState } from 'react';
 // React Native
 import {
+  Platform,
   Pressable,
   StyleSheet,
   Text,
@@ -29,8 +30,14 @@ export const CounterScreen = () => {
       <Pressable
         onPress={ () => handlerCounter( 1 ) }
         onLongPress={ handlerResetCount }
+        style={ ({ pressed }) => [
+          styles.button,
+          pressed && styles.buttonPress
+        ]}
       >
-        <Text>+1</Text>
+        <Text style={ styles.buttonText }>
+          Incrementar
+        </Text>
       </Pressable>
     </View>
   );
@@ -47,5 +54,17 @@ const styles = StyleSheet.create({
     fontSize: 80,
     color: 'black',
     fontWeight: '300'
+  },
+  button: {
+    backgroundColor: Platform.OS === 'android' ? '#5856D6' : 'white', 
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+    borderRadius: 10,
+  },
+  buttonPress: {
+    backgroundColor: Platform.OS === 'android' ? '#4746AB' : 'white', 
+  },
+  buttonText: {
+    color: Platform.OS === 'android' ? 'white' : '#4746AB'
   }
 });
