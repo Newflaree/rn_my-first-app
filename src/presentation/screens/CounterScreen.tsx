@@ -2,12 +2,12 @@
 import { useState } from 'react';
 // React Native
 import {
-  Platform,
-  Pressable,
   StyleSheet,
   Text,
   View
 } from 'react-native';
+// Components
+import { PrimaryButton } from '../components';
 
 
 export const CounterScreen = () => {
@@ -27,18 +27,11 @@ export const CounterScreen = () => {
         { count }
       </Text>
 
-      <Pressable
+      <PrimaryButton
+        label='Incrementar'
         onPress={ () => handlerCounter( 1 ) }
         onLongPress={ handlerResetCount }
-        style={ ({ pressed }) => [
-          styles.button,
-          pressed && styles.buttonPress
-        ]}
-      >
-        <Text style={ styles.buttonText }>
-          Incrementar
-        </Text>
-      </Pressable>
+      />
     </View>
   );
 }
@@ -55,16 +48,4 @@ const styles = StyleSheet.create({
     color: 'black',
     fontWeight: '300'
   },
-  button: {
-    backgroundColor: Platform.OS === 'android' ? '#5856D6' : 'white', 
-    paddingHorizontal: 20,
-    paddingVertical: 10,
-    borderRadius: 10,
-  },
-  buttonPress: {
-    backgroundColor: Platform.OS === 'android' ? '#4746AB' : 'white', 
-  },
-  buttonText: {
-    color: Platform.OS === 'android' ? 'white' : '#4746AB'
-  }
 });
