@@ -9,7 +9,7 @@ import { HelloWorldScreen } from './src/presentation/screens';
 export const App = () => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <HelloWorldScreen />
+      <HelloWorldScreen name='Camilo López' />
     </SafeAreaView>
   );
 }
