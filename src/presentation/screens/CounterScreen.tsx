@@ -6,6 +6,8 @@ import {
   Text,
   View
 } from 'react-native';
+// React Native Paper
+import { Button } from 'react-native-paper';
 // Components
 import { PrimaryButton } from '../components';
 
@@ -27,11 +29,21 @@ export const CounterScreen = () => {
         { count }
       </Text>
 
+      {/*
       <PrimaryButton
         label='Incrementar'
         onPress={ () => handlerCounter( 1 ) }
         onLongPress={ handlerResetCount }
       />
+      */}
+
+      <Button
+        mode='contained'
+        onPress={ () => handlerCounter( 1 ) }
+        onLongPress={ handlerResetCount }
+      >
+        Incrementar
+      </Button>
     </View>
   );
 }
