@@ -7,6 +7,7 @@ import {
 } from 'react-native';
 // React Native Paper
 import { FAB } from 'react-native-paper';
+import Icon from 'react-native-vector-icons/Ionicons';
 // Styles
 import { globalStyles } from '../theme';
 
@@ -26,6 +27,10 @@ export const CounterM3Screen = () => {
     <View style={ globalStyles.centerContainer }>
       <Text style={ globalStyles.title }>
         { count }
+      </Text>
+
+      <Text>
+        <Icon name='accessibility-outline' size={ 30 } />
       </Text>
 
       <FAB
