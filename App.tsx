@@ -6,6 +6,7 @@ import {
 import { PaperProvider } from 'react-native-paper';
 // Screens
 import {
+  CounterM3Screen,
   CounterScreen,
   //HelloWorldScreen
 } from './src/presentation/screens';
@@ -16,7 +17,8 @@ export const App = () => {
     <PaperProvider>
       <SafeAreaView style={{ flex: 1 }}>
         {/*<HelloWorldScreen name='Camilo López' />*/}
-        <CounterScreen />
+        {/*<CounterScreen />*/}
+        <CounterM3Screen />
       </SafeAreaView>
     </PaperProvider>
   );
