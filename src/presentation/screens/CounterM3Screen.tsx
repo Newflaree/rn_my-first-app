@@ -29,12 +29,10 @@ export const CounterM3Screen = () => {
         { count }
       </Text>
 
-      <Text>
-        <Icon name='accessibility-outline' size={ 30 } />
-      </Text>
+      {/*<Icon name='accessibility-outline' size={ 30 } />*/}
 
       <FAB
-        label='+1'
+        icon='add-outline'
         style={ globalStyles.fab }
         onPress={ () => handlerCounter( 1 ) }
         onLongPress={ handlerResetCount }

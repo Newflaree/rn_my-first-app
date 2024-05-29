@@ -10,11 +10,16 @@ import {
   CounterScreen,
   //HelloWorldScreen
 } from './src/presentation/screens';
+import IonIcons from 'react-native-vector-icons/Ionicons';
 
 
 export const App = () => {
   return (
-    <PaperProvider>
+    <PaperProvider
+      settings={{
+        icon: ( props ) => <IonIcons { ...props } />
+      }}
+    >
       <SafeAreaView style={{ flex: 1 }}>
         {/*<HelloWorldScreen name='Camilo López' />*/}
         {/*<CounterScreen />*/}
